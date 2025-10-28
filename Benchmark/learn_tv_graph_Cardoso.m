@@ -1,0 +1,151 @@
+function [ Lhat, output ]  = learn_tv_graph_Cardoso( S_cov, params )
+
+[N, ~] = size(S_cov);
+
+if nargin<2
+    params = struct;
+end
+
+
+if isfield(params,'lambda')
+    lambda = params.lambda;
+else
+        lambda = 0.1;
+end
+
+if isfield(params,'penalty')
+    penalty = params.penalty;
+else
+    penalty = 'scad';
+end
+
+
+if isfield(params,'w_lagged')
+    w_lagged = params.w_lagged;
+else
+    w_lagged = 0;
+end
+
+
+if isfield(params,'zeta')
+    zeta = params.zeta;
+else
+    zeta = 1;
+end
+
+if isfield(params,'beta')
+    beta = params.beta;
+else
+    beta = 0.9;
+end
+
+
+if isfield(params,'eta')
+    eta = params.eta;
+else
+    eta = 1;
+end
+
+
+
+if isfield(params,'verbose')
+    verbose = params.verbose;
+else
+    verbose = 1;
+end
+
+
+
+
+
+
+J = 1/N*ones(N);
+
+if isfield(params,'w0')
+    w0 = params.w0;
+else
+    L_i = pinv(S_cov);
+    w0 = w_from_L( L_i );
+end
+w = w0;
+
+
+
+itermax = 1000;
+reltol = 1e-8;
+
+
+
+
+for i=1:itermax
+
+    z = ncvx_penalty_grad(w, lambda, penalty);
+    f_grad = - conj_L_operator_mex( pinv(L_operator_mex(w) + J) - S_cov ) + lambda*z;
+    f_grad = f_grad  + 2*zeta * (w-w_lagged);
+    f = - log(det(L_operator_mex(w) + J)) + trace(S_cov*L_operator_mex(w)) + lambda*z'*w + zeta*norm(w - w_lagged)^2;
+
+    cnt = 0;
+    while true && cnt<50
+
+        w_new = max( w - eta*f_grad, 0 );
+        w_diff = w_new-w;
+
+        f_new = - log(det(L_operator_mex(w_new) + J)) + trace(S_cov*L_operator_mex(w_new)) + lambda*z'*w_new + zeta*norm(w_new - w_lagged)^2;
+        if f_new < ( f + w_diff'*f_grad + 1/(2*eta)*norm(w_diff)^2 )
+            break;
+        end
+
+        eta = eta*beta;
+        cnt = cnt + 1;
+    end
+
+
+
+    if (norm(w_diff) / norm(w) < reltol) && (i>1)
+        break;
+    end
+
+    w = w_new;
+
+
+end
+
+if verbose
+    fprintf('Cardoso TVGL finished at iteration = %d\n',i);
+end
+
+Lhat =  L_operator_mex( w );
+output = struct;
+
+
+end
+
+
+%% ===================================
+
+function z = ncvx_penalty_grad(w, lambda, penalty)
+n = length(w);
+z = zeros(n,1);
+
+switch(penalty)
+    case 'mcp'
+        gamma = 1.01;
+        z = (lambda - w/gamma).*(w <= gamma*lambda);
+    case 'scad'
+        gamma = 2.01;
+        gammlam = gamma* lambda;
+        for i=1:n
+            if w(i)<= lambda
+                z(i) = lambda;
+            elseif (lambda < w(i)) &&  (w(i) <= gammlam)
+                z(i) = (gammlam - w(i))/(gamma-1);
+            end
+        end
+
+    otherwise
+        error('invalid nonconvex penalty')
+end
+
+end
+
+
