@@ -31,22 +31,22 @@ MATLAB toolbox and put the installation folder in the main directory.
 Run the following demos:
 -----------------------------------
 * demo_tv_graph_learning:
-&nbsp;&nbsp;&nbsp; evaluate/visualize the time-varying graph learning performance versus the frame number
+Evaluate/visualize the time-varying graph learning performance versus the frame number
 in a single experiment with random data
 
 
 * tvgl_graph_learn_different_experiments:    
-&nbsp;&nbsp;&nbsp; evaluate the average time-varying graph learning performance versus different parameters for 
+Evaluate the average time-varying graph learning performance versus different parameters for 
 several different experiments with random data. 
 These parameters include:
-&nbsp;&nbsp;&nbsp; ** sr          : the sampling rate 
-&nbsp;&nbsp;&nbsp; ** std_n       : the noise level
-&nbsp;&nbsp;&nbsp; ** nu          : degree of freedom parameter of the Student-t distribution
-&nbsp;&nbsp;&nbsp; ** K           : number of clusters or components
-&nbsp;&nbsp;&nbsp; ** d           : maximum degree of each node
-&nbsp;&nbsp;&nbsp; ** rho         : parameter of the ADMM
-&nbsp;&nbsp;&nbsp; ** sigma_e     : the parameter to specify the sparsity and temporal consistency of the graph
-&nbsp;&nbsp;&nbsp; ** gamma       : regularization parameter for L1 norm penalty on the VAR model parameters
+** sr          : the sampling rate 
+** std_n       : the noise level
+** nu          : degree of freedom parameter of the Student-t distribution
+** K           : number of clusters or components
+** d           : maximum degree of each node
+** rho         : parameter of the ADMM
+** sigma_e     : the parameter to specify the sparsity and temporal consistency of the graph
+** gamma       : regularization parameter for L1 norm penalty on the VAR model parameters
 
 
 ===============================================================
@@ -61,5 +61,4 @@ IEEE Transactions on Signal Processing ȧ, doi: 10.1109/TSP.2025.3588173, Jul 20
 • A. Javaheri and D. P. Palomar, 
 "Learning Time-Varying Graphs for Heavy-Tailed Data Clustering", 
 2024 European Signal Processing Conference (EUSIPCO 2024), Lyon, France, Aug 2024.
-A. Javaheri, A. Amini, F. Marvasti and D. P. Palomar, "Joint Signal Recovery and Graph Learning from Incomplete Time-Series," ICASSP 2024 - 2024 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), Seoul, Korea, Republic of, 2024, pp. 13511-13515, doi: 10.1109/ICASSP48485.2024.10448021.
 
