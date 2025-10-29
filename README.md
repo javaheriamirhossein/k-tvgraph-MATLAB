@@ -4,12 +4,7 @@ This repository contains the MATLAB code for
 k-component time-varying graph learning (kTVGL) 
 applicable to heavy-tailed financial data clustering. 
 The 'Main' folder contains the principal functions 
-including the implementation of the 'kTVGL' method proposed 
-in  the following paper: 
-
-A. Javaheri, J. Ying, D. P. Palomar, and F. Marvasti, 
-"Time-Varying Graph Learning for Data with Heavy-Tailed Distribution",
-IEEE Transactions on Signal Processing ȧ, doi: 10.1109/TSP.2025.3588173, Jul 2025.
+including the implementation of the 'kTVGL' method.
 
 The folder 'Utils' contains some utility functions 
 (for random data generation and graph operations). 
