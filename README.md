@@ -1,4 +1,4 @@
-# k-tvgraph
+# Description
 ===============================================================
 
 This repository contains the MATLAB code for 
@@ -28,25 +28,25 @@ MATLAB toolbox and put the installation folder in the main directory.
 
 ===============================================================
 
-Run the following demos:
+# Demos:
 -----------------------------------
-* demo_tv_graph_learning:
+## demo_tv_graph_learning:
 Evaluate/visualize the time-varying graph learning performance versus the frame number
 in a single experiment with random data
 
 
-* tvgl_graph_learn_different_experiments:    
+## tvgl_graph_learn_different_experiments:    
 Evaluate the average time-varying graph learning performance versus different parameters for 
 several different experiments with random data. 
 These parameters include:
-** sr          : the sampling rate 
-** std_n       : the noise level
-** nu          : degree of freedom parameter of the Student-t distribution
-** K           : number of clusters or components
-** d           : maximum degree of each node
-** rho         : parameter of the ADMM
-** sigma_e     : the parameter to specify the sparsity and temporal consistency of the graph
-** gamma       : regularization parameter for L1 norm penalty on the VAR model parameters
+  - sr          : the sampling rate 
+  - std_n       : the noise level
+  - nu          : degree of freedom parameter of the Student-t distribution
+  - K           : number of clusters or components
+  - d           : maximum degree of each node
+  - rho         : parameter of the ADMM
+  - sigma_e     : the parameter to specify the sparsity and temporal consistency of the graph
+  - gamma       : regularization parameter for L1 norm penalty on the VAR model parameters
 
 
 ===============================================================
