@@ -1,5 +1,4 @@
 # Description
-===============================================================
 
 This repository contains the MATLAB code for 
 k-component time-varying graph learning (kTVGL) 
@@ -26,10 +25,9 @@ We have already included the GSPBOX method for comparison.
 To run this method, you need to download the [GSPBOX](https://github.com/epfl-lts2/gspbox)
 MATLAB toolbox and put the installation folder in the main directory.  
 
-===============================================================
 
-# Demos:
------------------------------------
+# Demos
+
 ## demo_tv_graph_learning:
 Evaluate/visualize the time-varying graph learning performance versus the frame number
 in a single experiment with random data
@@ -49,7 +47,7 @@ These parameters include:
   - gamma       : regularization parameter for L1 norm penalty on the VAR model parameters
 
 
-===============================================================
+# References
 
 Please give a star and cite the following:
 
