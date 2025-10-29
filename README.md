@@ -27,9 +27,8 @@ MATLAB toolbox and put the installation folder in the main directory.
 Evaluate/visualize the time-varying graph learning performance versus the frame number
 in a single experiment with random data
 
-<img src="Demo results/W_true.png" width="30%" style="display: block; margin: auto;" />
-<img src="Demo results/W_kTVGL.png" width="30%" style="display: block; margin: auto;" />
-<img src="Demo results/W_GSPBOX.png" width="30%" style="display: block; margin: auto;" />
+<img src="Demo results/Demo.png" width="70%" style="display: block; margin: auto;" />
+
 
 ## tvgl_graph_learn_different_experiments:    
 Evaluate the average time-varying graph learning performance versus different parameters for 
