@@ -27,7 +27,7 @@ MATLAB toolbox and put the installation folder in the main directory.
 Evaluate/visualize the time-varying graph learning performance versus the frame number
 in a single experiment with random data
 
-<img src="Demo results/Demo.png" width="100%" style="display: block; margin: auto;" />
+<img src="Demo results/Visual_tvgraphs/Demo.png" width="100%" style="display: block; margin: auto;" />
 
 
 ## tvgl_graph_learn_different_experiments:    
@@ -43,6 +43,12 @@ These parameters include:
   - sigma_e     : the parameter to specify the sparsity and temporal consistency of the graph
   - gamma       : regularization parameter for L1 norm penalty on the VAR model parameters
 
+
+
+## demo_tv_spectral_clustering:
+Evaluate the average time-varying clustering performance using spectral graph clustering. 
+
+<img src="Demo results/Clustering/accuracy.png" width="50%" style="display: block; margin: auto;" /> <img src="Demo results/Clustering/purity.png" width="50%" style="display: block; margin: auto;" />
 
 # References
 
