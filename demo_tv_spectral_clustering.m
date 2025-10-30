@@ -1,10 +1,11 @@
-addpath(genpath('D:\Sharif\Project\Code\Source\gspbox-0.7.5'))
 addpath(genpath(cd))
 
+% download the GSPBOX toolbox and put it in the main directory
+addpath(genpath([cd,'\gspbox-0.7.5']))
 
 
 maindir = cd;
-newdir = [maindir, '\Demo_results\'];
+newdir = [maindir, '\Demo results\Clustering\'];
 if ~isfolder(newdir)
     mkdir(newdir)
 end

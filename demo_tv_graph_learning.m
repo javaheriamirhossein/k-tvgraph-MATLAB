@@ -3,6 +3,12 @@ addpath(genpath(cd))
 % download the GSPBOX toolbox and put it in the main directory
 addpath(genpath([cd,'\gspbox-0.7.5']))
 
+maindir = cd;
+newdir = [maindir, '\Demo results\Visual_tvgraphs\'];
+if ~isfolder(newdir)
+    mkdir(newdir)
+end
+
 
 clc
 close all
@@ -151,7 +157,7 @@ imagesc(W_N_true_norm(1:N_pt,:));
 colorbar 
 colormap hot
 title('$W$ true', 'interpreter', 'latex')
-saveTightFigure(gcf,['W_true','_',num2str(frame_len),'.pdf'])
+saveTightFigure(gcf,[newdir, 'W_true','_',num2str(frame_len),'.pdf'])
 
 N_x_Alg = length(title_cell_X);
 X_rel_err = zeros(1,N_x_Alg);
@@ -220,12 +226,12 @@ for i = 1:N_alg
     colormap hot
     colorbar 
     title(title_cell{i}, 'interpreter', 'latex')
-    saveTightFigure(gcf,[title_cell{i},'_',num2str(frame_len),'.pdf'])
+    saveTightFigure(gcf,[newdir, title_cell{i},'_',num2str(frame_len),'.pdf'])
 
 end
 
 
 
-save(['data_tvgl_demo_',num2str(frame_len),'.mat'], 'L_cell', 'title_cell', 'Fscore','times','FDR','RelativeEr', 'data_struct');
+save([newdir, 'data_tvgl_demo_',num2str(frame_len),'.mat'], 'L_cell', 'title_cell', 'Fscore','times','FDR','RelativeEr', 'data_struct');
 
     
