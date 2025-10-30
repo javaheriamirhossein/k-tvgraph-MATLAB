@@ -7,7 +7,7 @@ The 'Main' folder contains the principal functions
 including the implementation of the 'kTVGL' method.
 
 The folder 'Utils' contains some utility functions 
-(for random data generation and graph operations). 
+(for random data generation, graph operations and clustering evaluation). 
 The 'Data' folder also includes 'graph_types.mat' which 
 contains several types of graph models to be used for 
 generating synthetic data defined over time-varying graphs.
