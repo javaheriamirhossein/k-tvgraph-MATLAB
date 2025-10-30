@@ -25,7 +25,7 @@ params_struct.N = 100;
 params_struct.T = 10*params_struct.N;
 params_struct.Normalization = Normalization;
 
-rho = 3;
+rho = 2;
 K = 1;
 d = 1;
 nu = 4;
