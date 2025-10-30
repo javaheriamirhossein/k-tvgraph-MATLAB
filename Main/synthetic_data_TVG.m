@@ -226,7 +226,7 @@ params.type = a_var_type;
 params.mu = 1;
 a_tvg = generate_random_matrix(N_w,1, params);
 a_tvg = 1+0.2*(a_tvg-0.5);
-Noise_w = 0.3*std(w0)*randl(N_w,N_f);
+Noise_w = 0.5*std(w0)*randl(N_w,N_f);
 
 
 W_N = zeros(N_w, N_f);
