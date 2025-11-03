@@ -5,8 +5,8 @@ function [w_cell, a_var, X, times] = learn_kcomp_heavytail_tv_graph( Y, SampleMa
 % This algorithm learns a time-varying graph modeled as piecewise constant
 % within each frame. It is applicable for learning graphs from heavy-tailed
 % data modeled by the Student-t distribution, and also suitable for Gaussian
-% data by properly adjusting the shape parameter, nu. The algorithm supports
-% learning K-component graphs, enabling K-class clustering. It is based on
+% data by properly adjusting the degree of freedom parameter, nu. The algorithm 
+% supports learning K-component graphs, enabling K-class clustering. It is based on
 % a majorization-minimization variant of ADMM to solve the following
 % problem:
 %
@@ -59,7 +59,7 @@ function [w_cell, a_var, X, times] = learn_kcomp_heavytail_tv_graph( Y, SampleMa
 %    maxiter         : Maximum number of iterations. Default: 100
 %    W_thr           : Weight pruning threshold
 %    reltol          : Relative error tolerance for stopping criterion. Defaul: 1e-5
-%    nu              : Shape parameter of the Student-t model
+%    nu              : Degree of freedom parameter of the Student-t model
 %    K               : number of clusters or components
 %    d               : maximum degree of each node
 %    rho             : Parameter of the ADMM
